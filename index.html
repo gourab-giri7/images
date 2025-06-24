@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css  ">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* body{
+            height: 100vh;
+            width: 100vw;
+            background-image: url(assets/bg.jpeg);
+            background-size: 100vh 100vw;
+        } */
+        .main{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+        }
+        /* #background{
+            background-image: url(assets/bg.jpeg);
+            background-size: contain;
+            filter: blur(5px);
+            z-index: -1;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        } */
+        .container{
+            height: 100%;
+            width: 300px;
+            padding: 10px;
+            border: 2px solid rgb(255, 255, 255);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: 0 0 90px rgb(10, 0, 0);
+            border-radius: 20px;
+        }
+        /* .boxes{
+            height: 100%;
+            width: 100%;
+        } */
+        .buttons{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .box{
+            height: 100%;
+            width: 100%;
+            display: none;
+            border: 20px solid #250101;
+                        border-radius: 20px;
+        }
+        img{
+            height: 100%;
+            width: 100%;
+        }
+        button{
+            height: 60px;
+            width: 70px;
+            padding: 15px;
+            background-color: #01552e;
+            font-weight: bold;
+            color: white;
+            border: 2px solid #000000;
+            font-size: 20px;
+                        border-radius: 10px;
+        }
+        button:hover{
+            background-color: white;
+            color:#00ad74;
+        }
+                /* for phones */
+    @media(max-width:480px){
+        .container{
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="background"></div>
+    <div class="main">
+    <div class="container">
+        <h1>My photos</h1>
+        <div class="boxes">
+            <div id="img1"class="box"><img src="assets/img 1.jpg" alt="img"></div>
+            <div id="img2"class="box"><img src="assets/img 3.jpg" alt=""></div>
+            <div id="img3"class="box"><img src="assets/img 4.jpg" alt=""> </div>
+            <div id="img4"class="box"><img src="assets/img 5.jpg" alt=""></div>
+            <div id="img5"class="box"><img src="assets/img 6.jpg" alt=""></div>
+            <div id="img6"class="box"><img src="assets/img 7.jpg" alt=""></div>
+            <div id="img7"class="box"><img src="assets/img 8.jpg" alt=""></div>
+            <div id="img8"class="box"><img src="assets/img 9.jpg" alt=""></div>
+            <div id="img9"class="box"><img src="assets/img 2.jpg" alt=""></div>
+        </div>
+        <div class="buttons">
+        <button id="left"><i class="fa-solid fa-left-long"></i></button>
+        <button id="right"><i class="fa-solid fa-right-long"></i></button>
+        </div>
+    </div>
+    </div>
+<script>
+    let a=1;
+    document.querySelector("#img1").style.display="block";
+    document.querySelector('#right').addEventListener("click",function(){
+        if(a==9){
+            // let a=1;
+            // document.querySelector("#img"+a).style.display="block";
+            // a++;
+            // document.querySelector("#img"+a).style.display="block";
+            // // alert(a)
+        }
+        else{
+            document.querySelector("#img"+a).style.display="none";
+
+            a++;
+            document.querySelector("#img"+a).style.display="block";
+
+
+        }
+    })
+
+    document.querySelector('#left').addEventListener("click",function(){
+        if(a==1){
+        // document.querySelector("#img"+b).style.display="none";
+        // b;
+        // document.querySelector("#img1").style.display="block";
+        }
+        else{
+        document.querySelector("#img"+a).style.display="none";
+
+        a--;
+        document.querySelector("#img"+a).style.display="block";
+
+        }
+    })
+</script>
+</body>
+</html>
